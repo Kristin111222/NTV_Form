@@ -115,7 +115,7 @@ export function Form() {
                                     className="bg-white"
                                     id="firstName"
                                     autoComplete="off"
-                                    placeholder="Gunnsteinn"
+                                    placeholder="First name"
                                     // TODO: Set values to all input fields in the form
                                     value={values.firstName}
                                     onChange={(e) => {
@@ -128,7 +128,7 @@ export function Form() {
                                     className="bg-white"
                                     id="lastName"
                                     autoComplete="off"
-                                    placeholder="Skulason"
+                                    placeholder="Last name"
                                     onChange={(e) => {
                                         onInputChange('lastName', e.target.value)
                                     }}
@@ -141,7 +141,7 @@ export function Form() {
                                     disabled
                                     autoComplete="off"
                                     type="email"
-                                    placeholder="asdf@ntv.is"
+                                    placeholder="email"
                                     onChange={(e) => {
                                         onInputChange('email', e.target.value)
                                     }}
