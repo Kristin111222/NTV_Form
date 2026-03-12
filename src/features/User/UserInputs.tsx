@@ -16,6 +16,7 @@ export function UserInputs({ values, onInputChange, debouncedSearchTerm }: Props
         <Input
           className="bg-white"
           placeholder="First name"
+           // TODO: Set values to all input fields in the form
           value={values.firstName}
           onChange={(e) => onInputChange("firstName", e.target.value)}
         />

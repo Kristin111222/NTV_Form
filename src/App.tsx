@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { Form } from "./components/Form";
+import { Form } from "./features/User/Form";
 // import { ShopCard } from "./components/ShopCard";
 
 
@@ -13,7 +13,8 @@ function App() {
       }}>Click</button>
       {/* <ShopCard />
       <ShopCard /> */}
-      {state &&
+      {
+      state &&
         <Form />
       }
     </div>

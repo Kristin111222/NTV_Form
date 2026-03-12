@@ -4,70 +4,49 @@ import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 
 type Props = {
+  email: string
+  setEmail: (v: string) => void
   onLoad: () => void
-  //loadEmailRef: React.RefObject<HTMLInputElement>
-    loadEmailRef: any
+  onCreate: () => void
 }
 
-export function LoadUserForm({ onLoad, loadEmailRef }: Props) {
-
+export function LoadUserForm({ email, setEmail, onLoad, onCreate }: Props) {
   return (
     <Card className="my-4">
 
       <CardHeader>
-        <div className="flex items-center gap-2">
-          <div className="grow border h-0"></div>
-          <CardTitle>Already filled out form?</CardTitle>
-          <div className="grow border h-0"></div>
-        </div>
+        <CardTitle>Start</CardTitle>
       </CardHeader>
 
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          onLoad()
-        }}
-        className="w-full"
-      >
+      <FieldSet>
+        <FieldGroup>
+          <Field>
+            <Input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="email"
+            />
+          </Field>
+        </FieldGroup>
+      </FieldSet>
 
-        <FieldSet>
+      <div className="flex flex-col py-4 gap-4">
 
-          <FieldGroup>
+        <Button
+          value="Load"
+          type="button"
+          onClick={onLoad}
+          className="bg-green-500 p-4 rounded text-white uppercase"
+        />
 
-            <Field>
+        <Button
+          value="Create new"
+          type="button"
+          onClick={onCreate}
+          className="bg-black p-4 rounded text-white uppercase"
+        />
 
-              <Input
-                className="bg-white"
-                id="email"
-                autoComplete="off"
-                type="email"
-                ref={loadEmailRef}
-                placeholder="asdf@ntv.is"
-              />
-
-            </Field>
-
-          </FieldGroup>
-
-        </FieldSet>
-
-        <div className="flex flex-col py-4 gap-4">
-
-          <Button
-            value="load"
-            type="submit"
-            className="bg-green-500 p-4 rounded text-white uppercase"
-          />
-
-          <Button
-            value="create new"
-            type="submit"
-            className="bg-green-500 p-4 rounded text-white uppercase"
-          />
-
-        </div>
-
-      </form>
+      </div>
 
     </Card>
   )
