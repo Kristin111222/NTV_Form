@@ -62,6 +62,7 @@ export function Form() {
   if (mode === "start") {
     return (
       <LoadUserForm
+      
         email={email}
         setEmail={setEmail}
         onCreate={() => {
@@ -82,14 +83,14 @@ export function Form() {
   }
 
         return (
-    <Card className="w-3/4 max-w-7xl bg-blue-950">
+   <Card className="my-10 max-w-3xl mx-auto bg-blue-950 p-6 w-full">
 
       <form
   onSubmit={(e) => {
     e.preventDefault()
     onSubmit()
   }}
-  className="w-full"
+  className="w-full h-full flex flex-col"
 >
 
         <FieldSet>
@@ -109,7 +110,7 @@ export function Form() {
         <div className="flex flex-col py-4 gap-4">
           <Button
             type="submit"
-            className="bg-pink-500 p-4 rounded text-white uppercase"
+            className="bg-pink-500 p-4 rounded text-white uppercase w-64 mx-auto"
           />
         </div>
 

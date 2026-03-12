@@ -12,7 +12,7 @@ type Props = {
 
 export function LoadUserForm({ email, setEmail, onLoad, onCreate }: Props) {
   return (
-    <Card className="my-4">
+    <Card className="my-10 max-w-md mx-auto">
 
       <CardHeader>
         <CardTitle>Start</CardTitle>
@@ -25,6 +25,7 @@ export function LoadUserForm({ email, setEmail, onLoad, onCreate }: Props) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="email"
+              className="bg-white w-64 mx-auto"
             />
           </Field>
         </FieldGroup>
@@ -36,14 +37,14 @@ export function LoadUserForm({ email, setEmail, onLoad, onCreate }: Props) {
           value="Load"
           type="button"
           onClick={onLoad}
-          className="bg-green-500 p-4 rounded text-white uppercase"
+          className="bg-green-500 p-4 rounded text-white uppercase w-64 mx-auto"
         />
 
         <Button
           value="Create new"
           type="button"
           onClick={onCreate}
-          className="bg-black p-4 rounded text-white uppercase"
+          className="bg-black p-4 rounded text-white uppercase w-64 mx-auto"
         />
 
       </div>
